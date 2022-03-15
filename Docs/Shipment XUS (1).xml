@@ -1,0 +1,989 @@
+<UniversalShipment xmlns="http://www.cargowise.com/Schemas/Universal/2011/11" version="1.1">
+	<Shipment>
+		<DataContext>
+			<DataTargetCollection>
+				<DataTarget>
+					<Type>ForwardingConsol</Type>
+				</DataTarget>
+			</DataTargetCollection>
+			<Company>
+				<Code>MEL</Code>
+				<Country>
+					<Code>AU</Code>
+					<Name>Australia</Name>
+				</Country>
+				<Name>Toll Global Forwarding Pty Ltd</Name>
+			</Company>
+			<DataProvider>TIPTS3MEL</DataProvider>
+			<EnterpriseID>TIP</EnterpriseID>
+			<ServerID>TS3</ServerID>
+		</DataContext>
+		<PlaceOfDelivery>
+			<Code>NLRTM</Code>
+			<Name>Rotterdam</Name>
+		</PlaceOfDelivery>
+		<PlaceOfIssue>
+			<Code>SEGOT</Code>
+			<Name>Goteborg</Name>
+		</PlaceOfIssue>
+		<PlaceOfReceipt>
+			<Code>USNYC</Code>
+			<Name>New York,NY</Name>
+		</PlaceOfReceipt>
+		<PortFirstForeign>
+			<Code/>
+		</PortFirstForeign>
+		<PortLastForeign>
+			<Code/>
+		</PortLastForeign>
+		<PortOfDischarge>
+			<Code>NLRTM</Code>
+			<Name>Rotterdam</Name>
+		</PortOfDischarge>
+		<PortOfFirstArrival>
+			<Code/>
+		</PortOfFirstArrival>
+		<PortOfLoading>
+			<Code>USNYC</Code>
+			<Name>New York,NY</Name>
+		</PortOfLoading>
+		<ShipmentType>
+			<Code>AGT</Code>
+			<Description>Agent</Description>
+		</ShipmentType>
+		<TotalNoOfPacks>23</TotalNoOfPacks>
+		<TotalNoOfPacksPackageType>
+			<Code>PKG</Code>
+			<Description>Package</Description>
+		</TotalNoOfPacksPackageType>
+		<TotalVolume>0</TotalVolume>
+		<TotalVolumeUnit>
+			<Code>M3</Code>
+			<Description>Cubic Metres</Description>
+		</TotalVolumeUnit>
+		<TotalWeight>15258.85</TotalWeight>
+		<TotalWeightUnit>
+			<Code>KG</Code>
+			<Description>Kilograms</Description>
+		</TotalWeightUnit>
+		<TransportMode>
+			<Code>SEA</Code>
+			<Description>Sea Freight</Description>
+		</TransportMode>
+		<VesselName>AL SAFAT</VesselName>
+		<VoyageFlightNo>ALS1422</VoyageFlightNo>
+		<WayBillNumber>ACLUSA00751949</WayBillNumber>
+		<WayBillType>
+			<Code>MWB</Code>
+			<Description>Master Waybill</Description>
+		</WayBillType>
+		<ContainerCollection Content="Complete">
+			<Container>
+				<AirVentFlow>0.0</AirVentFlow>
+				<AirVentFlowRateUnit>
+					<Code/>
+				</AirVentFlowRateUnit>
+				<ArrivalCartageAdvised/>
+				<ArrivalCartageComplete/>
+				<ArrivalCartageDemurrageTime/>
+				<ArrivalCartageRef/>
+				<ArrivalCTOStorageStartDate/>
+				<ArrivalDeliveryRequiredBy/>
+				<ArrivalEstimatedDelivery/>
+				<ArrivalPickupByRail>false</ArrivalPickupByRail>
+				<ArrivalSlotDateTime/>
+				<ArrivalSlotReference/>
+				<ArrivalTruckWaitTime/>
+				<Commodity>
+					<Code/>
+				</Commodity>
+				<ContainerCount>1</ContainerCount>
+				<ContainerImportDORelease/>
+				<ContainerNumber>ACLU9680952</ContainerNumber>
+				<ContainerParkEmptyPickupGateOut/>
+				<ContainerParkEmptyReturnGateIn/>
+				<ContainerQuality>
+					<Code/>
+				</ContainerQuality>
+				<ContainerStatus>
+					<Code/>
+				</ContainerStatus>
+				<ContainerType>
+					<Code>40HC</Code>
+					<Category>
+						<Code>DRY</Code>
+						<Description>Dry Storage</Description>
+					</Category>
+					<Description>Forty foot high cube</Description>
+					<ISOCode>45G0</ISOCode>
+				</ContainerType>
+				<DeliveryMode>CY/CY</DeliveryMode>
+				<DeliverySequence>0</DeliverySequence>
+				<DepartureCartageAdvised/>
+				<DepartureCartageComplete/>
+				<DepartureCartageDemurrageTime/>
+				<DepartureCartageRef/>
+				<DepartureDeliveryByRail>false</DepartureDeliveryByRail>
+				<DepartureDockReceipt/>
+				<DepartureEstimatedPickup/>
+				<DepartureSlotDateTime/>
+				<DepartureSlotReference/>
+				<DepartureTruckWaitTime/>
+				<DunnageWeight>0.000</DunnageWeight>
+				<EmptyReadyForReturn/>
+				<EmptyRequired/>
+				<EmptyReturnedBy/>
+				<EmptyReturnRef/>
+				<ExportDepotCustomsReference/>
+				<FCL_LCL_AIR>
+					<Code>FCL</Code>
+					<Description>Full Container Load</Description>
+				</FCL_LCL_AIR>
+				<FCLAvailable/>
+				<FCLHeldInTransitStaging>false</FCLHeldInTransitStaging>
+				<FCLOnBoardVessel/>
+				<FCLStorageArrivedUnderbond>false</FCLStorageArrivedUnderbond>
+				<FCLStorageCommences/>
+				<FCLStorageModuleOnlyMaster/>
+				<FCLStorageUnderbondCleared/>
+				<FCLUnloadFromVessel/>
+				<FCLWharfGateIn/>
+				<FCLWharfGateOut/>
+				<GoodsValue>0.0000</GoodsValue>
+				<GoodsValueCurrency>
+					<Code/>
+				</GoodsValueCurrency>
+				<GoodsWeight>15258.85</GoodsWeight>
+				<GrossWeight>19238.850</GrossWeight>
+				<GrossWeightVerificationType>
+					<Code>NON</Code>
+					<Description>Not Verified</Description>
+				</GrossWeightVerificationType>
+				<HumidityPercent>0</HumidityPercent>
+				<ImportDepotCustomsReference/>
+				<IsCFSRegistered>false</IsCFSRegistered>
+				<IsControlledAtmosphere>false</IsControlledAtmosphere>
+				<IsDamaged>false</IsDamaged>
+				<IsEmptyContainer>false</IsEmptyContainer>
+				<IsSealOk>true</IsSealOk>
+				<IsShipperOwned>false</IsShipperOwned>
+				<LCLAvailable/>
+				<LCLStorageCommences/>
+				<LCLUnpack/>
+				<LengthUnit>
+					<Code>FT</Code>
+					<Description>Feet</Description>
+				</LengthUnit>
+				<Link>1</Link>
+				<OverhangBack>0.000</OverhangBack>
+				<OverhangFront>0</OverhangFront>
+				<OverhangHeight>0</OverhangHeight>
+				<OverhangLeft>0</OverhangLeft>
+				<OverhangRight>0.000</OverhangRight>
+				<OverrideFCLAvailableStorage>false</OverrideFCLAvailableStorage>
+				<OverrideLCLAvailableStorage>false</OverrideLCLAvailableStorage>
+				<PackDate/>
+				<RefrigGeneratorID/>
+				<ReleaseNum/>
+				<Seal>0592754</Seal>
+				<SealPartyType>
+					<Code/>
+				</SealPartyType>
+				<SecondSeal/>
+				<SecondSealPartyType>
+					<Code/>
+				</SecondSealPartyType>
+				<SetPointTemp>0.000</SetPointTemp>
+				<SetPointTempUnit/>
+				<StowagePosition/>
+				<TareWeight>3980.000</TareWeight>
+				<TempRecorderSerialNo/>
+				<ThirdSeal/>
+				<ThirdSealPartyType>
+					<Code/>
+				</ThirdSealPartyType>
+				<TotalHeight>9.500</TotalHeight>
+				<TotalLength>40.000</TotalLength>
+				<TotalWidth>8.000</TotalWidth>
+				<TrainWagonNumber/>
+				<UnpackGang/>
+				<UnpackShed/>
+				<VolumeCapacity>0.000</VolumeCapacity>
+				<VolumeUnit>
+					<Code>M3</Code>
+					<Description>Cubic Metres</Description>
+				</VolumeUnit>
+				<WeightCapacity>0.000</WeightCapacity>
+				<WeightUnit>
+					<Code>KG</Code>
+					<Description>Kilograms</Description>
+				</WeightUnit>
+			</Container>
+		</ContainerCollection>
+		<CustomizedFieldCollection>
+			<CustomizedField>
+				<DataType>DateTime</DataType>
+				<Key>Bill of Lading Date</Key>
+				<Value/>
+			</CustomizedField>
+			<CustomizedField>
+				<DataType>String</DataType>
+				<Key>NC Category</Key>
+				<Value/>
+			</CustomizedField>
+			<CustomizedField>
+				<DataType>String</DataType>
+				<Key>NC Root Cause</Key>
+				<Value/>
+			</CustomizedField>
+			<CustomizedField>
+				<DataType>String</DataType>
+				<Key>NC Problem Party</Key>
+				<Value/>
+			</CustomizedField>
+			<CustomizedField>
+				<DataType>String</DataType>
+				<Key>NC Problem Party Code</Key>
+				<Value/>
+			</CustomizedField>
+			<CustomizedField>
+				<DataType>String</DataType>
+				<Key>NC Party Additional</Key>
+				<Value/>
+			</CustomizedField>
+			<CustomizedField>
+				<DataType>String</DataType>
+				<Key>NC Est Additional Costs</Key>
+				<Value/>
+			</CustomizedField>
+			<CustomizedField>
+				<DataType>DateTime</DataType>
+				<Key>NC Identified Date</Key>
+				<Value/>
+			</CustomizedField>
+			<CustomizedField>
+				<DataType>String</DataType>
+				<Key>NC Comments</Key>
+				<Value/>
+			</CustomizedField>
+		</CustomizedFieldCollection>
+		<OrganizationAddressCollection>
+			<OrganizationAddress>
+				<AddressType>NotifyParty</AddressType>
+				<Address1>VAN RIEMSDIJKWEG 63</Address1>
+				<Address2>WAALHAVEN-EEMHAVEN</Address2>
+				<AddressOverride>false</AddressOverride>
+				<AddressShortCode>VAN MAASDIJKWEG 13-15</AddressShortCode>
+				<City>ROTTERDAM HAVENS</City>
+				<CompanyName>TOLL GLOBAL FORWARDING (NETHERLANDS) BV</CompanyName>
+				<Contact>Ocean Import</Contact>
+				<Country>
+					<Code>NL</Code>
+					<Name>Netherlands</Name>
+				</Country>
+				<Email>import.seafreight.nlrtm@tollgroup.com</Email>
+				<Fax>+31102833750</Fax>
+				<GovRegNum>817098215B01</GovRegNum>
+				<GovRegNumType>
+					<Code>BTW</Code>
+					<Description>VAT (BTW) Business Registration Num</Description>
+				</GovRegNumType>
+				<Mobile/>
+				<OrganizationCode>TOLGLORTM</OrganizationCode>
+				<Phone>+31102833700</Phone>
+				<Port>
+					<Code>NLRTM</Code>
+					<Name>Rotterdam</Name>
+				</Port>
+				<Postcode>3088 HB</Postcode>
+				<ScreeningStatus>
+					<Code>CLR</Code>
+					<Description>Clear</Description>
+				</ScreeningStatus>
+				<State/>
+			</OrganizationAddress>
+			<OrganizationAddress>
+				<AddressType>ReceivingForwarderAddress</AddressType>
+				<Address1>VAN RIEMSDIJKWEG 63</Address1>
+				<Address2>WAALHAVEN-EEMHAVEN</Address2>
+				<AddressOverride>false</AddressOverride>
+				<AddressShortCode>VAN MAASDIJKWEG 13-15</AddressShortCode>
+				<City>ROTTERDAM HAVENS</City>
+				<CompanyName>TOLL GLOBAL FORWARDING (NETHERLANDS) BV</CompanyName>
+				<Country>
+					<Code>NL</Code>
+					<Name>Netherlands</Name>
+				</Country>
+				<Email>documents.nlrtm.tgf@tollgroup.com</Email>
+				<Fax>+31102833750</Fax>
+				<GovRegNum>817098215B01</GovRegNum>
+				<GovRegNumType>
+					<Code>BTW</Code>
+					<Description>VAT (BTW) Business Registration Num</Description>
+				</GovRegNumType>
+				<OrganizationCode>TOLGLORTM</OrganizationCode>
+				<Phone>+31102833700</Phone>
+				<Port>
+					<Code>NLRTM</Code>
+					<Name>Rotterdam</Name>
+				</Port>
+				<Postcode>3088 HB</Postcode>
+				<ScreeningStatus>
+					<Code>CLR</Code>
+					<Description>Clear</Description>
+				</ScreeningStatus>
+				<State/>
+			</OrganizationAddress>
+			<OrganizationAddress>
+				<AddressType>ShippingLineAddress</AddressType>
+				<Address1>PACKHUSPLATSEN</Address1>
+				<Address2/>
+				<AddressOverride>false</AddressOverride>
+				<AddressShortCode>GROSSER GRASBROOK 10</AddressShortCode>
+				<City>GOETEBORG</City>
+				<CompanyName>ATLANTIC CONTAINER LINE AB - OLD ACL</CompanyName>
+				<Country>
+					<Code>SE</Code>
+					<Name>Sweden</Name>
+				</Country>
+				<Email/>
+				<Fax/>
+				<OrganizationCode>ACLDEU_WW</OrganizationCode>
+				<Phone/>
+				<Port>
+					<Code>SEGOT</Code>
+					<Name>Goteborg</Name>
+				</Port>
+				<Postcode>41113</Postcode>
+				<ScreeningStatus>
+					<Code>CLR</Code>
+					<Description>Clear</Description>
+				</ScreeningStatus>
+				<State/>
+				<RegistrationNumberCollection>
+					<RegistrationNumber>
+						<Type>
+							<Code>LSC</Code>
+							<Description>Legacy System Code</Description>
+						</Type>
+						<CountryOfIssue>
+							<Code>DE</Code>
+							<Name>Germany</Name>
+						</CountryOfIssue>
+						<Value>C70064</Value>
+					</RegistrationNumber>
+				</RegistrationNumberCollection>
+			</OrganizationAddress>
+			<OrganizationAddress>
+				<AddressType>SendingForwarderAddress</AddressType>
+				<Address1>70 SUNRISE HIGHWAY, SUITE 517</Address1>
+				<Address2/>
+				<AddressOverride>false</AddressOverride>
+				<AddressShortCode>70 SUNRISE HIGHWAY, SUITE</AddressShortCode>
+				<City>VALLEY STREAM</City>
+				<CompanyName>TOLL GLOBAL FORWARDING (USA) INC. - NYC</CompanyName>
+				<Country>
+					<Code>US</Code>
+					<Name>United States</Name>
+				</Country>
+				<Email>gfrowvnsgn.accountant@tollgroup.com</Email>
+				<Fax>+17184754821</Fax>
+				<GovRegNum>13-318845300</GovRegNum>
+				<GovRegNumType>
+					<Code>EIN</Code>
+					<Description>Employer Identification Number</Description>
+				</GovRegNumType>
+				<OrganizationCode>TOLGLONYC</OrganizationCode>
+				<Phone>+17187232333</Phone>
+				<Port>
+					<Code>USNYC</Code>
+					<Name>New York,NY</Name>
+				</Port>
+				<Postcode>11581</Postcode>
+				<ScreeningStatus>
+					<Code>CLR</Code>
+					<Description>Clear</Description>
+				</ScreeningStatus>
+				<State Description="New York">NY</State>
+			</OrganizationAddress>
+		</OrganizationAddressCollection>
+		<SubShipmentCollection>
+			<SubShipment>
+				<DataContext>
+					<DataTargetCollection>
+						<DataTarget>
+							<Type>ForwardingShipment</Type>
+						</DataTarget>
+					</DataTargetCollection>
+				</DataContext>
+				<ActualChargeable>15.259</ActualChargeable>
+				<AdditionalTerms/>
+				<BookingConfirmationReference/>
+				<CartageWaybillNumber/>
+				<CFSReference/>
+				<CommunityTransitStatus>
+					<Code/>
+				</CommunityTransitStatus>
+				<ContainerCount>1</ContainerCount>
+				<ContainerMode>
+					<Code>FCL</Code>
+					<Description>Full Container Load</Description>
+				</ContainerMode>
+				<DocumentedChargeable>15.259</DocumentedChargeable>
+				<DocumentedVolume>0.000</DocumentedVolume>
+				<DocumentedWeight>15258.850</DocumentedWeight>
+				<FreightRate>0.0000</FreightRate>
+				<FreightRateCurrency>
+					<Code/>
+				</FreightRateCurrency>
+				<GoodsDescription>building materials</GoodsDescription>
+				<GoodsValue>0.0000</GoodsValue>
+				<GoodsValueCurrency>
+					<Code>EUR</Code>
+					<Description>Euro</Description>
+				</GoodsValueCurrency>
+				<HBLAWBChargesDisplay>
+					<Code>AGR</Code>
+					<Description>Show "As Agreed" in the charges section</Description>
+				</HBLAWBChargesDisplay>
+				<HBLContainerPackModeOverride/>
+				<HouseBillOfLadingType>
+					<Code>THF</Code>
+					<Description>TGF A4 HBL</Description>
+				</HouseBillOfLadingType>
+				<InsuranceValue>0.0000</InsuranceValue>
+				<InsuranceValueCurrency>
+					<Code>EUR</Code>
+					<Description>Euro</Description>
+				</InsuranceValueCurrency>
+				<InterimReceiptNumber/>
+				<IsBooking>false</IsBooking>
+				<IsCancelled>false</IsCancelled>
+				<IsCFSRegistered>false</IsCFSRegistered>
+				<IsDirectBooking>false</IsDirectBooking>
+				<IsForwardRegistered>true</IsForwardRegistered>
+				<IsHighRisk>false</IsHighRisk>
+				<IsNeutralMaster>false</IsNeutralMaster>
+				<IsShipping>false</IsShipping>
+				<IsSplitShipment>false</IsSplitShipment>
+				<LloydsIMO>9349497</LloydsIMO>
+				<ManifestedChargeable>15.259</ManifestedChargeable>
+				<ManifestedVolume>0.000</ManifestedVolume>
+				<ManifestedWeight>15258.850</ManifestedWeight>
+				<NoCopyBills>3</NoCopyBills>
+				<NoOriginalBills>3</NoOriginalBills>
+				<OuterPacks>23</OuterPacks>
+				<OuterPacksPackageType>
+					<Code>SKD</Code>
+					<Description>Skid</Description>
+				</OuterPacksPackageType>
+				<PackingOrder>0</PackingOrder>
+				<PortOfDestination>
+					<Code>NLRTM</Code>
+					<Name>Rotterdam</Name>
+				</PortOfDestination>
+				<PortOfDischarge>
+					<Code>NLRTM</Code>
+					<Name>Rotterdam</Name>
+				</PortOfDischarge>
+				<PortOfFirstArrival>
+					<Code/>
+				</PortOfFirstArrival>
+				<PortOfLoading>
+					<Code>USNYC</Code>
+					<Name>New York,NY</Name>
+				</PortOfLoading>
+				<PortOfOrigin>
+					<Code>USNYC</Code>
+					<Name>New York,NY</Name>
+				</PortOfOrigin>
+				<ReleaseType>
+					<Code>OBR</Code>
+					<Description>Original Bill Required at Destination</Description>
+				</ReleaseType>
+				<ScreeningStatus>
+					<Code>CLR</Code>
+					<Description>Clear</Description>
+				</ScreeningStatus>
+				<ServiceLevel>
+					<Code>STD</Code>
+					<Description>Standard</Description>
+				</ServiceLevel>
+				<ShipmentIncoTerm>
+					<Code>CIF</Code>
+					<Description>Cost, Insurance And Freight</Description>
+				</ShipmentIncoTerm>
+				<ShipmentType>
+					<Code>STD</Code>
+					<Description>Standard House</Description>
+				</ShipmentType>
+				<ShippedOnBoard>
+					<Code>SHP</Code>
+					<Description>Shipped</Description>
+				</ShippedOnBoard>
+				<ShipperCODAmount>0.0000</ShipperCODAmount>
+				<ShipperCODPayMethod>
+					<Code/>
+				</ShipperCODPayMethod>
+				<TotalNoOfPacks>0</TotalNoOfPacks>
+				<TotalNoOfPacksPackageType>
+					<Code>CTN</Code>
+					<Description>Carton</Description>
+				</TotalNoOfPacksPackageType>
+				<TotalVolume>0.000</TotalVolume>
+				<TotalVolumeUnit>
+					<Code>M3</Code>
+					<Description>Cubic Metres</Description>
+				</TotalVolumeUnit>
+				<TotalWeight>15258.850</TotalWeight>
+				<TotalWeightUnit>
+					<Code>KG</Code>
+					<Description>Kilograms</Description>
+				</TotalWeightUnit>
+				<TranshipToOtherCFS>false</TranshipToOtherCFS>
+				<TransportMode>
+					<Code>SEA</Code>
+					<Description>Sea Freight</Description>
+				</TransportMode>
+				<VesselName>AL SAFAT</VesselName>
+				<VoyageFlightNo>ALS1422</VoyageFlightNo>
+				<WarehouseLocation/>
+				<WayBillNumber>SBOSES21128345</WayBillNumber>
+				<WayBillType>
+					<Code>HWB</Code>
+					<Description>House Waybill</Description>
+				</WayBillType>
+				<LocalProcessing>
+					<ArrivalCartageRef/>
+					<DeliveryCartageAdvised/>
+					<DeliveryCartageCompleted/>
+					<DeliveryLabourCharge>0.0000</DeliveryLabourCharge>
+					<DeliveryLabourTime/>
+					<DeliveryRequiredBy/>
+					<DeliveryRequiredFrom/>
+					<DeliveryTruckWaitCharge>0.0000</DeliveryTruckWaitCharge>
+					<DeliveryTruckWaitTime/>
+					<DemurrageOnDeliveryCharge>0.0000</DemurrageOnDeliveryCharge>
+					<DemurrageOnDeliveryTime/>
+					<DemurrageOnPickupCharge>0.0000</DemurrageOnPickupCharge>
+					<DemurrageOnPickupTime/>
+					<EstimatedDelivery/>
+					<EstimatedPickup/>
+					<ExportStatement>
+						<Code/>
+					</ExportStatement>
+					<FCLAvailable/>
+					<FCLDeliveryDetentionCharge>0.0000</FCLDeliveryDetentionCharge>
+					<FCLDeliveryDetentionDays>0</FCLDeliveryDetentionDays>
+					<FCLDeliveryDetentionFreeDays>0</FCLDeliveryDetentionFreeDays>
+					<FCLDeliveryEquipmentNeeded>
+						<Code>WUP</Code>
+						<Description>Wait for Pack/Unpack</Description>
+					</FCLDeliveryEquipmentNeeded>
+					<FCLPickupDetentionCharge>0.0000</FCLPickupDetentionCharge>
+					<FCLPickupDetentionDays>0</FCLPickupDetentionDays>
+					<FCLPickupDetentionFreeDays>0</FCLPickupDetentionFreeDays>
+					<FCLPickupEquipmentNeeded>
+						<Code>WUP</Code>
+						<Description>Wait for Pack/Unpack</Description>
+					</FCLPickupEquipmentNeeded>
+					<FCLStorageCommences/>
+					<HasProhibitedPackaging>false</HasProhibitedPackaging>
+					<InsuranceRequired>false</InsuranceRequired>
+					<IsContingencyRelease>false</IsContingencyRelease>
+					<LCLAirStorageCharge>0.0000</LCLAirStorageCharge>
+					<LCLAirStorageDaysOrHours>0</LCLAirStorageDaysOrHours>
+					<LCLAvailable/>
+					<LCLDatesOverrideConsol>false</LCLDatesOverrideConsol>
+					<LCLStorageCommences/>
+					<PickupCartageAdvised/>
+					<PickupCartageCompleted/>
+					<PickupLabourCharge>0.0000</PickupLabourCharge>
+					<PickupLabourTime/>
+					<PickupRequiredBy/>
+					<PickupRequiredFrom/>
+					<PickupTruckWaitCharge>0.0000</PickupTruckWaitCharge>
+					<PickupTruckWaitTime/>
+					<PrintOptionForPackagesOnAWB>
+						<Code>ALL</Code>
+						<Description>Both Dimensions and Volume if available</Description>
+					</PrintOptionForPackagesOnAWB>
+					<OrderNumberCollection>
+						<OrderNumber>
+							<OrderReference>Order</OrderReference>
+							<Sequence>1</Sequence>
+						</OrderNumber>
+						<OrderNumber>
+							<OrderReference>ref</OrderReference>
+							<Sequence>2</Sequence>
+						</OrderNumber>
+						<OrderNumber>
+							<OrderReference>1</OrderReference>
+							<Sequence>3</Sequence>
+						</OrderNumber>
+					</OrderNumberCollection>
+				</LocalProcessing>
+				<CustomizedFieldCollection>
+					<CustomizedField>
+						<DataType>String</DataType>
+						<Key>Cotton On Hold Reason</Key>
+						<Value/>
+					</CustomizedField>
+					<CustomizedField>
+						<DataType>Boolean</DataType>
+						<Key>GCC</Key>
+						<Value>false</Value>
+					</CustomizedField>
+					<CustomizedField>
+						<DataType>String</DataType>
+						<Key>Alt Cust Ref</Key>
+						<Value/>
+					</CustomizedField>
+					<CustomizedField>
+						<DataType>String</DataType>
+						<Key>Buying Rate</Key>
+						<Value/>
+					</CustomizedField>
+					<CustomizedField>
+						<DataType>DateTime</DataType>
+						<Key>Cargo Ready Date</Key>
+						<Value/>
+					</CustomizedField>
+					<CustomizedField>
+						<DataType>String</DataType>
+						<Key>Contract Number</Key>
+						<Value/>
+					</CustomizedField>
+					<CustomizedField>
+						<DataType>String</DataType>
+						<Key>FSA Chargeable Weight</Key>
+						<Value/>
+					</CustomizedField>
+					<CustomizedField>
+						<DataType>String</DataType>
+						<Key>Nom Vs Free - Dest</Key>
+						<Value/>
+					</CustomizedField>
+					<CustomizedField>
+						<DataType>String</DataType>
+						<Key>Nom Vs Free - Origin</Key>
+						<Value/>
+					</CustomizedField>
+					<CustomizedField>
+						<DataType>String</DataType>
+						<Key>Selling Rate</Key>
+						<Value/>
+					</CustomizedField>
+					<CustomizedField>
+						<DataType>Boolean</DataType>
+						<Key>Selling Rate Entered</Key>
+						<Value>false</Value>
+					</CustomizedField>
+					<CustomizedField>
+						<DataType>Boolean</DataType>
+						<Key>Send to IMS</Key>
+						<Value>false</Value>
+					</CustomizedField>
+					<CustomizedField>
+						<DataType>String</DataType>
+						<Key>US Task Flow</Key>
+						<Value/>
+					</CustomizedField>
+				</CustomizedFieldCollection>
+				<OrganizationAddressCollection>
+					<OrganizationAddress>
+						<AddressType>ConsignorDocumentaryAddress</AddressType>
+						<Address1>153 BOWLES RD</Address1>
+						<Address2/>
+						<AddressOverride>false</AddressOverride>
+						<AddressShortCode>153 BOWLES ROAD</AddressShortCode>
+						<City>AGAWAM</City>
+						<CompanyName>OMG INC</CompanyName>
+						<Country>
+							<Code>US</Code>
+							<Name>United States</Name>
+						</Country>
+						<Email/>
+						<Fax/>
+						<GovRegNum>04-322893600</GovRegNum>
+						<GovRegNumType>
+							<Code>EIN</Code>
+							<Description>Employer Identification Number</Description>
+						</GovRegNumType>
+						<OrganizationCode>OMGXBL</OrganizationCode>
+						<Phone/>
+						<Port>
+							<Code>USXBL</Code>
+							<Name>Agawam</Name>
+						</Port>
+						<Postcode>01001</Postcode>
+						<ScreeningStatus>
+							<Code>CLR</Code>
+							<Description>Clear</Description>
+						</ScreeningStatus>
+						<State Description="Massachusetts">MA</State>
+						<RegistrationNumberCollection>
+							<RegistrationNumber>
+								<Type>
+									<Code>CID</Code>
+									<Description>CCID Customs Client Identifier</Description>
+								</Type>
+								<CountryOfIssue>
+									<Code>AU</Code>
+									<Name>Australia</Name>
+								</CountryOfIssue>
+								<Value>CGN7334737X</Value>
+							</RegistrationNumber>
+						</RegistrationNumberCollection>
+					</OrganizationAddress>
+					<OrganizationAddress>
+						<AddressType>ConsignorPickupDeliveryAddress</AddressType>
+						<Address1>153 BOWLES RD</Address1>
+						<Address2/>
+						<AddressOverride>false</AddressOverride>
+						<AddressShortCode>153 BOWLES ROAD</AddressShortCode>
+						<City>AGAWAM</City>
+						<CompanyName>OMG INC</CompanyName>
+						<Country>
+							<Code>US</Code>
+							<Name>United States</Name>
+						</Country>
+						<Email/>
+						<Fax/>
+						<GovRegNum>04-322893600</GovRegNum>
+						<GovRegNumType>
+							<Code>EIN</Code>
+							<Description>Employer Identification Number</Description>
+						</GovRegNumType>
+						<OrganizationCode>OMGXBL</OrganizationCode>
+						<Phone/>
+						<Port>
+							<Code>USXBL</Code>
+							<Name>Agawam</Name>
+						</Port>
+						<Postcode>01001</Postcode>
+						<ScreeningStatus>
+							<Code>CLR</Code>
+							<Description>Clear</Description>
+						</ScreeningStatus>
+						<State Description="Massachusetts">MA</State>
+					</OrganizationAddress>
+					<OrganizationAddress>
+						<AddressType>ConsigneeDocumentaryAddress</AddressType>
+						<Address1>SCHAAPHERDERWEG 24</Address1>
+						<Address2/>
+						<AddressOverride>false</AddressOverride>
+						<AddressShortCode>SHANNONWEG 64</AddressShortCode>
+						<City>RIDDERKERK</City>
+						<CompanyName>TIGERS INTERNATIONAL LOGISTICS BV</CompanyName>
+						<Country>
+							<Code>NL</Code>
+							<Name>Netherlands</Name>
+						</Country>
+						<Email>michel.spel@go2tigers.com</Email>
+						<Fax/>
+						<GovRegNum>34104592</GovRegNum>
+						<GovRegNumType>
+							<Code>CCN</Code>
+							<Description>Chamber of Commerce Number</Description>
+						</GovRegNumType>
+						<OrganizationCode>TIGINTRTM</OrganizationCode>
+						<Phone>+31102966003</Phone>
+						<Port>
+							<Code>NLRID</Code>
+							<Name>Ridderkerk</Name>
+						</Port>
+						<Postcode>2988 CK</Postcode>
+						<ScreeningStatus>
+							<Code>CLR</Code>
+							<Description>Clear</Description>
+						</ScreeningStatus>
+						<State Description="Zuid-Holland">ZH</State>
+					</OrganizationAddress>
+					<OrganizationAddress>
+						<AddressType>ConsigneePickupDeliveryAddress</AddressType>
+						<Address1>SCHAAPHERDERWEG 24</Address1>
+						<Address2/>
+						<AddressOverride>false</AddressOverride>
+						<AddressShortCode>SHANNONWEG 64</AddressShortCode>
+						<City>RIDDERKERK</City>
+						<CompanyName>TIGERS INTERNATIONAL LOGISTICS BV</CompanyName>
+						<Country>
+							<Code>NL</Code>
+							<Name>Netherlands</Name>
+						</Country>
+						<Email>michel.spel@go2tigers.com</Email>
+						<Fax/>
+						<GovRegNum>34104592</GovRegNum>
+						<GovRegNumType>
+							<Code>CCN</Code>
+							<Description>Chamber of Commerce Number</Description>
+						</GovRegNumType>
+						<OrganizationCode>TIGINTRTM</OrganizationCode>
+						<Phone>+31102966003</Phone>
+						<Port>
+							<Code>NLRID</Code>
+							<Name>Ridderkerk</Name>
+						</Port>
+						<Postcode>2988 CK</Postcode>
+						<ScreeningStatus>
+							<Code>CLR</Code>
+							<Description>Clear</Description>
+						</ScreeningStatus>
+						<State Description="Zuid-Holland">ZH</State>
+					</OrganizationAddress>
+					<OrganizationAddress>
+						<AddressType>ImportBroker</AddressType>
+						<Address1>TUPOLEVLAAN 85</Address1>
+						<Address2/>
+						<AddressOverride>false</AddressOverride>
+						<AddressShortCode>AMS</AddressShortCode>
+						<City>SCHIPHOL-RIJK</City>
+						<CompanyName>TOLL GLOBAL FORWARDING (NETHERLANDS) BV</CompanyName>
+						<Country>
+							<Code>NL</Code>
+							<Name>Netherlands</Name>
+						</Country>
+						<Email/>
+						<Fax>+31206543111</Fax>
+						<GovRegNum>817098215B01</GovRegNum>
+						<GovRegNumType>
+							<Code>BTW</Code>
+							<Description>VAT (BTW) Business Registration Num</Description>
+						</GovRegNumType>
+						<OrganizationCode>TOLGLOAMS</OrganizationCode>
+						<Phone>+31206543100</Phone>
+						<Port>
+							<Code>NLAMS</Code>
+							<Name>Amsterdam</Name>
+						</Port>
+						<Postcode>1119 PA</Postcode>
+						<ScreeningStatus>
+							<Code>CLR</Code>
+							<Description>Clear</Description>
+						</ScreeningStatus>
+						<State Description="Noord-Holland">NH</State>
+					</OrganizationAddress>
+					<OrganizationAddress>
+						<AddressType>DeliveryAgent</AddressType>
+						<Address1>VAN RIEMSDIJKWEG 63</Address1>
+						<Address2>WAALHAVEN-EEMHAVEN</Address2>
+						<AddressOverride>false</AddressOverride>
+						<AddressShortCode>VAN MAASDIJKWEG 13-15</AddressShortCode>
+						<City>ROTTERDAM HAVENS</City>
+						<CompanyName>TOLL GLOBAL FORWARDING (NETHERLANDS) BV</CompanyName>
+						<Country>
+							<Code>NL</Code>
+							<Name>Netherlands</Name>
+						</Country>
+						<Email>documents.nlrtm.tgf@tollgroup.com</Email>
+						<Fax>+31102833750</Fax>
+						<GovRegNum>817098215B01</GovRegNum>
+						<GovRegNumType>
+							<Code>BTW</Code>
+							<Description>VAT (BTW) Business Registration Num</Description>
+						</GovRegNumType>
+						<OrganizationCode>TOLGLORTM</OrganizationCode>
+						<Phone>+31102833700</Phone>
+						<Port>
+							<Code>NLRTM</Code>
+							<Name>Rotterdam</Name>
+						</Port>
+						<Postcode>3088 HB</Postcode>
+						<ScreeningStatus>
+							<Code>CLR</Code>
+							<Description>Clear</Description>
+						</ScreeningStatus>
+						<State/>
+					</OrganizationAddress>
+				</OrganizationAddressCollection>
+				<PackingLineCollection Content="Complete">
+					<PackingLine>
+						<Commodity>
+							<Code>GEN</Code>
+							<Description>General</Description>
+						</Commodity>
+						<ContainerLink>1</ContainerLink>
+						<ContainerNumber>ACLU9680952</ContainerNumber>
+						<ContainerPackingOrder>1</ContainerPackingOrder>
+						<CountryOfOrigin>
+							<Code/>
+						</CountryOfOrigin>
+						<DetailedDescription/>
+						<EndItemNo>0</EndItemNo>
+						<ExportReferenceNumber/>
+						<GoodsDescription>building materials</GoodsDescription>
+						<HarmonisedCode>1101</HarmonisedCode>
+						<Height>0.000</Height>
+						<ImportReferenceNumber/>
+						<ItemNo>0</ItemNo>
+						<Length>0.000</Length>
+						<LengthUnit>
+							<Code>M</Code>
+							<Description>Metres</Description>
+						</LengthUnit>
+						<LinePrice>0.0000</LinePrice>
+						<Link>1</Link>
+						<LoadingMeters>0.000</LoadingMeters>
+						<MarksAndNos/>
+						<OutturnComment/>
+						<OutturnDamagedQty>0</OutturnDamagedQty>
+						<OutturnedHeight>0.000</OutturnedHeight>
+						<OutturnedLength>0.000</OutturnedLength>
+						<OutturnedVolume>0.000</OutturnedVolume>
+						<OutturnedWeight>0.000</OutturnedWeight>
+						<OutturnedWidth>0.000</OutturnedWidth>
+						<OutturnPillagedQty>0</OutturnPillagedQty>
+						<OutturnQty>0</OutturnQty>
+						<PackingLineID>TIPTS301066621</PackingLineID>
+						<PackQty>23</PackQty>
+						<PackType>
+							<Code>SKD</Code>
+							<Description>Skid</Description>
+						</PackType>
+						<ReferenceNumber/>
+						<RequiresTemperatureControl>false</RequiresTemperatureControl>
+						<Volume>0.000</Volume>
+						<VolumeUnit>
+							<Code>M3</Code>
+							<Description>Cubic Metres</Description>
+						</VolumeUnit>
+						<Weight>15258.850</Weight>
+						<WeightUnit>
+							<Code>KG</Code>
+							<Description>Kilograms</Description>
+						</WeightUnit>
+						<Width>0.000</Width>
+						<CustomizedFieldCollection>
+							<CustomizedField>
+								<DataType>String</DataType>
+								<Key>Location</Key>
+								<Value>SAMPLE LOCATION</Value>
+							</CustomizedField>
+							<CustomizedField>
+								<DataType>String</DataType>
+								<Key>Custom_Ref 2</Key>
+								<Value/>
+							</CustomizedField>
+							<CustomizedField>
+								<DataType>String</DataType>
+								<Key>Container Number</Key>
+								<Value/>
+							</CustomizedField>
+							<CustomizedField>
+								<DataType>Decimal</DataType>
+								<Key>Item Count</Key>
+								<Value>0.000</Value>
+							</CustomizedField>
+							<CustomizedField>
+								<DataType>Decimal</DataType>
+								<Key>Chargeable Weight</Key>
+								<Value>0.000</Value>
+							</CustomizedField>
+						</CustomizedFieldCollection>
+					</PackingLine>
+				</PackingLineCollection>
+			</SubShipment>
+		</SubShipmentCollection>
+	</Shipment>
+</UniversalShipment>

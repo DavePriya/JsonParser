@@ -1,0 +1,55 @@
+{
+    "data": {
+      "Delivery Agent Contact": "COMPANIA HULERA TORNEL, S.A. DE C.V",
+      "Vessel Name": "MSC ALDI III",
+      "Shipping Line Seal": "1072797",
+      "Container Size": "40HC",
+      "Consignor Address": "VILLAGE-KHEDIMUBARAKPUR LAKSAR, HARIDWAR-INDIA,247662 INDIA",
+      "Place of Discharge": "ITAJAI,BRAZIL",
+      "Shipping Bill Date": "24-12-2021",
+      "Port Of Loading": "MUNDRA, INDIA",
+      "Move Type": "CY/CY",
+      "Volume": "50M3",
+      "Notify Party 1 Address": "SANTA LUCIA 311, AZCAPOTZALCO 02770 MEXICO, D.F SANTA LUCIA",
+      "MTD / BL No": "MSCUTU03909",
+      "Document Type": "MULTI-MODAL TRANSPORT DOCUMENT BILL OF LADING",
+      "Consignor": "CAVENDISH INDUSTRIES LIMITED",
+      "Consignee": "RJU TRADING LTDA",
+      "PO No": "8100027232",
+      "Container No": "CAIU7348319",
+      "Weight": "13,289.900",
+      "Shipping Bill": "7007101",
+      "Delivery Agent Contact Address": "SANTA LUCIA 311, AZCAPOTZALCO 02770 MEXICO, D.F SANTA LUCIA",
+      "Shipment Reference No": "JKT94849/90/14-02-2022",
+      "Place of Acceptance": "MUNDRA, INDIA",
+      "Notify Party 1": "COMPANIA HULERA TORNEL, S.A. DE C.V",
+      "Notify Party 2": "COMPANIA HULERA TORNEL, S.A. DE C.V.",
+      "Payment Term": "COLLECT",
+      "Consignee Address": "Rodovia Antonio Heil N 800, KM 01, Sala 06 SANTA CATARINA Bairro : Itaipava, Itajai SC",
+      "Packages": "260",
+      "HS Code": "40112010",
+      "Voyage No": "SI201R",
+      "Notify Party 2 Address": "AVENIDA STA. LUCIA NO 311. COL SANTA CRUZ ACAYUCAN AZCAPOTZALCO, MEXICO D.F, MEXICO C.P 02770",
+      "Place of Delivery": "ITAJAI,BRAZIL",
+      "lineItems": {
+        "columns": [
+          "Sr No",
+          "Marks and Number",
+          "Number of  Packages",
+          "Description of Goods",
+          "Gross  Weight",
+          "Measurement / CBM"
+        ],
+        "data": [
+          {
+            "Sr No": "",
+            "Marks and Number": "CHALENGER TYRES 260 PCS",
+            "Number of  Packages": "260 PACKAGES",
+            "Description of Goods": "01X40’HC FCL STC 260 PACKAGES ONLY CONTAINING TUBELESS ALL STEEL RADIAL TYRES AUTOMOBILE TYRES FOR TRUCK / BUS APPLICATIONS 275/80R22.5_CHLNGR_CUL2_DOT_16 PR_L_TL – 260 PCS. SHIPPING BILL NO : 7007101 DT: 24-12-2021 INV. NO : BRZ21/16105332/1 DT: 23-12-2021 PO NO. 8100027232 - 12.10.2021 IEC NO: 0215000595 H.S. CODE: 40112010 NET WT: 13,289.900 KGS",
+            "Gross  Weight": "13,289 .900 KGS",
+            "Measurement / CBM": "50M3"
+          }
+        ]
+      }
+    }
+  }
