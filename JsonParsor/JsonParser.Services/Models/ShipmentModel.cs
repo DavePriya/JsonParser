@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace JsonParser.Services.Models
 {
@@ -92,6 +93,8 @@ namespace JsonParser.Services.Models
 
         [JsonProperty(PropertyName = "Place of Delivery")]
         public string PlaceOfDelivery { get; set; }
+
+        public List<LineItemModel> LineItems { get; set; }
     }
 
 }
