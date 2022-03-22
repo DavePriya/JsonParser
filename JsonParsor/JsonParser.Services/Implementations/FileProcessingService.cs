@@ -11,16 +11,19 @@ namespace JsonParser.Services.Implementations
     {
         private readonly IFileUtility fileUtility;
         private readonly IConfiguration config;
+        private readonly IFtpHelper ftpHelper;
 
-        public FileProcessingService(IFileUtility fileUtility, IConfiguration iConfig)
+        public FileProcessingService(IFileUtility fileUtility, IConfiguration iConfig,
+            IFtpHelper iFtpHelper)
         {
             this.fileUtility = fileUtility;
             config = iConfig;
+            ftpHelper = iFtpHelper;
         }
 
         public void ProcessFiles()
         {
-            //  ftpHelper.DownloadSFTPFiles(config["FtpHost"], config["FtpUser"], config["FtpPasssword"], string.Empty, config["InputPath"], false);
+              ftpHelper.DownloadSFTPFiles(config["FtpHost"], config["FtpUser"], config["FtpPasssword"],config["FtpDir"], config["InputPath"], false);
             try
             {
                 FileSystemInfo[] inputFiles = fileUtility.GetFiles(config["InputPath"], "*.json");

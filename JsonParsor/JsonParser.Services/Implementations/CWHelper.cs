@@ -1,20 +1,22 @@
 ﻿using JsonParser.Services.Interfaces;
 using JsonParser.Services.Models;
+using Microsoft.Extensions.Options;
 using System;
 using System.IO;
+using System.Net;
 using System.Xml;
 
 namespace JsonParser.Services.Implementations
 {
     public class CWHelper : ICWHelper
     {
-        // private readonly ICargowiseOne cargowiseOne;
-        //private readonly CWServiceDetails serviceDetails;
+         private readonly ICargowiseOne cargowiseOne;
+        private readonly CWServiceDetails serviceDetails;
 
-        public CWHelper(ICargowiseOne iCargowiseOne/*, IOptions<CWServiceDetails> cwDetails*/)
+        public CWHelper(ICargowiseOne iCargowiseOne, IOptions<CWServiceDetails> cwDetails)
         {
-            //serviceDetails = cwDetails.Value;
-            //cargowiseOne = iCargowiseOne;
+            serviceDetails = cwDetails.Value;
+            cargowiseOne = iCargowiseOne;
         }
 
         public bool UpdateCarbonEmission(ShipmentModel shipmentModel)
@@ -155,6 +157,8 @@ namespace JsonParser.Services.Implementations
                     writer.WriteElementString("Description", Constants.VolumeUnitDescription);
                     writer.WriteEndElement();//TotalVolumeUnit end  
 
+                    writer.WriteElementString("WayBillNumber", shipmentModel.MTDBLNo);
+                    
                     writer.WriteStartElement("LocalProcessing");
 
                     writer.WriteStartElement("OrderNumberCollection");
@@ -170,22 +174,17 @@ namespace JsonParser.Services.Implementations
                     writer.WriteStartElement("CustomizedFieldCollection");
 
                     writer.WriteStartElement("CustomizedField");
-                    writer.WriteElementString("DataType", Constants.WeightUnitCode);
-                    writer.WriteElementString("Key", Constants.WeightUnitCode);
-                    writer.WriteElementString("Value", Constants.WeightUnitCode);
+                    writer.WriteElementString("DataType", Constants.DataTypes.String.ToString());
+                    writer.WriteElementString("Key", Constants.CustomizedCollectionKeys["BillDate"]);
+                    writer.WriteElementString("Value", shipmentModel.ShippingBillDate);
                     writer.WriteEndElement();//CustomizedField end
 
                     writer.WriteStartElement("CustomizedField");
-                    writer.WriteElementString("DataType", Constants.WeightUnitCode);
-                    writer.WriteElementString("Key", Constants.WeightUnitCode);
-                    writer.WriteElementString("Value", Constants.WeightUnitCode);
+                    writer.WriteElementString("DataType", Constants.DataTypes.String.ToString());
+                    writer.WriteElementString("Key", Constants.CustomizedCollectionKeys["ShippingBill"]);
+                    writer.WriteElementString("Value", shipmentModel.ShippingBill);
                     writer.WriteEndElement();//CustomizedField end
 
-                    writer.WriteStartElement("CustomizedField");
-                    writer.WriteElementString("DataType", Constants.WeightUnitCode);
-                    writer.WriteElementString("Key", Constants.WeightUnitCode);
-                    writer.WriteElementString("Value", Constants.WeightUnitCode);
-                    writer.WriteEndElement();//CustomizedField end
 
                     writer.WriteEndElement();//CustomizedFieldCollection end
 
@@ -238,12 +237,17 @@ namespace JsonParser.Services.Implementations
                         writer.WriteElementString("Description", Constants.VolumeUnitDescription);
                         writer.WriteEndElement();//VolumeUnit end  
 
+                        writer.WriteStartElement("PackType");
+                        writer.WriteElementString("Code", Constants.PackageUnitCode);
+                        writer.WriteElementString("Description", Constants.PackageUnitDescription);
+                        writer.WriteEndElement();//PackType end  
+
                         writer.WriteStartElement("CustomizedFieldCollection");
 
                         writer.WriteStartElement("CustomizedField");
-                        writer.WriteElementString("DataType", Constants.WeightUnitCode);
-                        writer.WriteElementString("Key", Constants.WeightUnitCode);
-                        writer.WriteElementString("Value", Constants.WeightUnitCode);
+                        writer.WriteElementString("DataType", Constants.DataTypes.String.ToString());
+                        writer.WriteElementString("Key", Constants.CustomizedCollectionKeys["PONumber"]);
+                        writer.WriteElementString("Value", shipmentModel.PONo);
                         writer.WriteEndElement();//CustomizedField end
 
                         writer.WriteEndElement();//CustomizedFieldCollection 
@@ -258,14 +262,14 @@ namespace JsonParser.Services.Implementations
                     writer.WriteEndElement();//shipment end
                     writer.WriteEndElement();//uni shipment end
 
-                    //writer.Flush();
-                    //mStream.Position = 0;
+                    writer.Flush();
+                    mStream.Position = 0;
 
-                    //var statusCode = cargowiseOne.UpdateCargowiseOne(mStream);
-                    //if (statusCode != HttpStatusCode.OK) //If response is not OK, set success=false
-                    //{
-                    //    success = false;
-                    //}
+                    var statusCode = cargowiseOne.UpdateCargowiseOne(mStream);
+                    if (statusCode != HttpStatusCode.OK) //If response is not OK, set success=false
+                    {
+                        success = false;
+                    }
                 }
                 catch (Exception ex)
                 {

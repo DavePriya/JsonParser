@@ -1,6 +1,7 @@
 using Coravel;
 using JsonParser.Services.Implementations;
 using JsonParser.Services.Interfaces;
+using JsonParser.Services.Models;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
@@ -29,9 +30,11 @@ namespace JsonParser
                        services.AddTransient<JsonInvocable>();
                        // services.AddLogging(configure => configure.AddSerilog());
                        services.AddTransient<IFileProcessingService, FileProcessingService>();
+                       services.Configure<CWServiceDetails>(configuration.GetSection("CWService"));
                        services.AddTransient<ICargowiseOne, CargowiseOne>();
                        services.AddTransient<ICWHelper, CWHelper>();
                        services.AddTransient<IFileUtility, FileUtility>();
+                       services.AddTransient<IFtpHelper, FtpHelper>();
 
                    });
     }
