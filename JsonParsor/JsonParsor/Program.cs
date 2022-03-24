@@ -4,6 +4,7 @@ using JsonParser.Services.Interfaces;
 using JsonParser.Services.Models;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Serilog;
 
 namespace JsonParser
 {
@@ -21,14 +22,14 @@ namespace JsonParser
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
                Host.CreateDefaultBuilder(args).UseWindowsService()
-                   //     .UseSerilog((hostingContext, loggerConfiguration) => loggerConfiguration.ReadFrom.Configuration(hostingContext.Configuration))
+                   .UseSerilog((hostingContext, loggerConfiguration) => loggerConfiguration.ReadFrom.Configuration(hostingContext.Configuration))
                    .ConfigureServices((hostContext, services) =>
                    {
                        var configuration = hostContext.Configuration;
                        services.AddScheduler();
                       // services.AddHttpClient();
                        services.AddTransient<JsonInvocable>();
-                       // services.AddLogging(configure => configure.AddSerilog());
+                       services.AddLogging(configure => configure.AddSerilog());
                        services.AddTransient<IFileProcessingService, FileProcessingService>();
                        services.Configure<CWServiceDetails>(configuration.GetSection("CWService"));
                        services.AddTransient<ICargowiseOne, CargowiseOne>();

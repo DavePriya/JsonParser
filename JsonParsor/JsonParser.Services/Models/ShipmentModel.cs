@@ -23,7 +23,7 @@ namespace JsonParser.Services.Models
         [JsonProperty(PropertyName = "Place of Discharge")]
         public string PlaceOfDischarge { get; set; }
 
-        [JsonProperty(PropertyName = "ShippingBillDate")]
+        [JsonProperty(PropertyName = "Shipping Bill Date")]
         public string ShippingBillDate { get; set; }
         
         [JsonProperty(PropertyName = "Port Of Loading")]
@@ -94,7 +94,7 @@ namespace JsonParser.Services.Models
         [JsonProperty(PropertyName = "Place of Delivery")]
         public string PlaceOfDelivery { get; set; }
 
-        public List<LineItemModel> LineItems { get; set; }
+        public LineItemDataModel LineItems { get; set; }
     }
 
 }

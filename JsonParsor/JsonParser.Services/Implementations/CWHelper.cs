@@ -1,6 +1,6 @@
 ﻿using JsonParser.Services.Interfaces;
 using JsonParser.Services.Models;
-using Microsoft.Extensions.Options;
+using Serilog;
 using System;
 using System.IO;
 using System.Net;
@@ -11,15 +11,13 @@ namespace JsonParser.Services.Implementations
     public class CWHelper : ICWHelper
     {
          private readonly ICargowiseOne cargowiseOne;
-        private readonly CWServiceDetails serviceDetails;
 
-        public CWHelper(ICargowiseOne iCargowiseOne, IOptions<CWServiceDetails> cwDetails)
+        public CWHelper(ICargowiseOne iCargowiseOne)
         {
-            serviceDetails = cwDetails.Value;
             cargowiseOne = iCargowiseOne;
         }
 
-        public bool UpdateCarbonEmission(ShipmentModel shipmentModel)
+        public bool UpdateShipment(ShipmentModel shipmentModel)
         {
             var success = true;
             XmlWriterSettings settings = new XmlWriterSettings
@@ -46,9 +44,9 @@ namespace JsonParser.Services.Implementations
                     writer.WriteStartElement("DataTarget");
                     writer.WriteElementString("Type", Constants.DataTarget.ForwardingConsol.ToString());
 
-                    writer.WriteStartElement("DataProvider");
-                    writer.WriteString(shipmentModel.ShipmentReferenceNo);
-                    writer.WriteEndElement();//DataProvider end
+                    //writer.WriteStartElement("DataProvider");
+                    //writer.WriteString(shipmentModel.ShipmentReferenceNo);
+                    //writer.WriteEndElement();//DataProvider end
 
                     writer.WriteStartElement("EnterpriseID");
                     writer.WriteString(Constants.EnterpriseID);
@@ -60,20 +58,20 @@ namespace JsonParser.Services.Implementations
                     writer.WriteEndElement();//data target collection end  
                     writer.WriteEndElement();//data context end
 
-                    writer.WriteStartElement("PlaceOfDelivery");
-                    writer.WriteElementString("Code", shipmentModel.PlaceOfDelivery?.Split(',')[0]?.Trim());
-                    writer.WriteElementString("Name", shipmentModel.PlaceOfDelivery?.Split(',')[1]?.Trim());
-                    writer.WriteEndElement();//PlaceOfDelivery end  
+                    //writer.WriteStartElement("PlaceOfDelivery");
+                    //writer.WriteElementString("Code", shipmentModel.PlaceOfDelivery?.Split(',')[0]?.Trim());
+                    //writer.WriteElementString("Name", shipmentModel.PlaceOfDelivery?.Split(',')[1]?.Trim());
+                    //writer.WriteEndElement();//PlaceOfDelivery end  
 
-                    writer.WriteStartElement("PortOfDischarge");
-                    writer.WriteElementString("Code", shipmentModel.PlaceOfDischarge?.Split(',')[0]?.Trim());
-                    writer.WriteElementString("Name", shipmentModel.PlaceOfDischarge?.Split(',')[1]?.Trim());
-                    writer.WriteEndElement();//PortOfDischarge end  
+                    //writer.WriteStartElement("PortOfDischarge");
+                    //writer.WriteElementString("Code", shipmentModel.PlaceOfDischarge?.Split(',')[0]?.Trim());
+                    //writer.WriteElementString("Name", shipmentModel.PlaceOfDischarge?.Split(',')[1]?.Trim());
+                    //writer.WriteEndElement();//PortOfDischarge end  
 
-                    writer.WriteStartElement("PortOfLoading");
-                    writer.WriteElementString("Code", shipmentModel.PortOfLoading?.Split(',')[0]?.Trim());
-                    writer.WriteElementString("Name", shipmentModel.PortOfLoading?.Split(',')[1]?.Trim());
-                    writer.WriteEndElement();//PortOfLoading end  
+                    //writer.WriteStartElement("PortOfLoading");
+                    //writer.WriteElementString("Code", shipmentModel.PortOfLoading?.Split(',')[0]?.Trim());
+                    //writer.WriteElementString("Name", shipmentModel.PortOfLoading?.Split(',')[1]?.Trim());
+                    //writer.WriteEndElement();//PortOfLoading end  
 
                     writer.WriteElementString("VesselName", shipmentModel.VesselName);
                     writer.WriteElementString("VoyageFlightNo", shipmentModel.VoyageNo);
@@ -137,21 +135,21 @@ namespace JsonParser.Services.Implementations
                     writer.WriteElementString("OuterPacks", shipmentModel.Packages);
 
 
-                    writer.WriteStartElement("PortOfDestination");
-                    writer.WriteElementString("Code", shipmentModel.PlaceOfDelivery?.Split(',')[0]?.Trim());
-                    writer.WriteElementString("Name", shipmentModel.PlaceOfDelivery?.Split(',')[1]?.Trim());
-                    writer.WriteEndElement();//PortOfDestination end  
+                    //writer.WriteStartElement("PortOfDestination");
+                    //writer.WriteElementString("Code", shipmentModel.PlaceOfDelivery?.Split(',')[0]?.Trim());
+                    //writer.WriteElementString("Name", shipmentModel.PlaceOfDelivery?.Split(',')[1]?.Trim());
+                    //writer.WriteEndElement();//PortOfDestination end  
 
-                    writer.WriteStartElement("PortOfOrigin");
-                    writer.WriteElementString("Code", shipmentModel.PlaceOfAcceptance?.Split(',')[0]?.Trim());
-                    writer.WriteElementString("Name", shipmentModel.PlaceOfAcceptance?.Split(',')[1]?.Trim());
-                    writer.WriteEndElement();//PortOfOrigin end  
+                    //writer.WriteStartElement("PortOfOrigin");
+                    //writer.WriteElementString("Code", shipmentModel.PlaceOfAcceptance?.Split(',')[0]?.Trim());
+                    //writer.WriteElementString("Name", shipmentModel.PlaceOfAcceptance?.Split(',')[1]?.Trim());
+                    //writer.WriteEndElement();//PortOfOrigin end  
 
                     writer.WriteStartElement("ShipmentIncoTerm");
                     writer.WriteElementString("Code", shipmentModel.PaymentTerm);
                     writer.WriteEndElement();//ShipmentIncoTerm end  
 
-                    writer.WriteElementString("TotalVolume", shipmentModel.Volume);
+                    writer.WriteElementString("TotalVolume", shipmentModel.Volume?.Split('M')[0]);
                     writer.WriteStartElement("TotalVolumeUnit");
                     writer.WriteElementString("Code", Constants.VolumeUnitCode);
                     writer.WriteElementString("Description", Constants.VolumeUnitDescription);
@@ -216,16 +214,16 @@ namespace JsonParser.Services.Implementations
                     writer.WriteStartElement("PackingLineCollection");
                     writer.WriteAttributeString("Content", "Complete");
 
-                    foreach (LineItemModel lineItem in shipmentModel.LineItems)
+                    foreach (LineItemModel lineItem in shipmentModel.LineItems.Data)
                     {
 
                         writer.WriteStartElement("PackingLine");
                         writer.WriteElementString("GoodsDescription", lineItem.DescriptionGoods);
                         writer.WriteElementString("HarmonisedCode", shipmentModel.HSCode);
                         writer.WriteElementString("MarksAndNos", lineItem.MarksNumbers);
-                        writer.WriteElementString("PackQty", lineItem.NumberPackages);
+                        writer.WriteElementString("PackQty", lineItem.NumberPackages?.Split(' ')[0]);
 
-                        writer.WriteElementString("Weight", lineItem.GrossWeight);
+                        writer.WriteElementString("Weight", lineItem.GrossWeight?.Split(' ')[0]);
                         writer.WriteStartElement("WeightUnit");
                         writer.WriteElementString("Code", Constants.WeightUnitCode);
                         writer.WriteElementString("Description", Constants.WeightUnitDescription);
@@ -265,6 +263,13 @@ namespace JsonParser.Services.Implementations
                     writer.Flush();
                     mStream.Position = 0;
 
+                    //using (FileStream fs = new FileStream("H:\\fileName.xml", FileMode.OpenOrCreate))
+                    //{
+                    //    mStream.CopyTo(fs);
+                    //    fs.Flush();
+                    //}
+
+
                     var statusCode = cargowiseOne.UpdateCargowiseOne(mStream);
                     if (statusCode != HttpStatusCode.OK) //If response is not OK, set success=false
                     {
@@ -273,7 +278,7 @@ namespace JsonParser.Services.Implementations
                 }
                 catch (Exception ex)
                 {
-                    // Log.Information("CargowiseHelper UpdateCarbonEmission" + ex.Message);
+                    Log.Information("CargowiseHelper Updateshipment" + ex.Message);
                     success = false;
                 }
                 finally

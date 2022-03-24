@@ -19,7 +19,7 @@ namespace JsonParser.Services.Models
         [JsonProperty(PropertyName = "Gross  Weight")]
         public string GrossWeight { get; set; }
 
-        [JsonProperty(PropertyName = "Measurement/CBM")]
+        [JsonProperty(PropertyName = "Measurement / CBM")]
         public string Measurement { get; set; }
 
 
