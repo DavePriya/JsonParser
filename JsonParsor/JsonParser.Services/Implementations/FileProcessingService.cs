@@ -27,14 +27,16 @@ namespace JsonParser.Services.Implementations
         {
             try
             {
-                ftpHelper.DownloadSFTPFiles(config["FtpHost"], config["FtpUser"], config["FtpPasssword"], config["FtpDir"], config["InputPath"], false);
+               ftpHelper.DownloadSFTPFiles(config["FtpHost"], config["FtpUser"], config["FtpPasssword"], config["FtpDir"], config["InputPath"],config["DeleteFileAfterDownload"]);
 
                 FileSystemInfo[] inputFiles = fileUtility.GetFiles(config["InputPath"], "*.json");
                 if (inputFiles?.Length > 0)
                 {
                     foreach (FileSystemInfo file in inputFiles)
                     {
-                        ShipmentJsonModel shipment = ReadJson<ShipmentJsonModel>(file.FullName);
+                        try
+                        {
+                            ShipmentJsonModel shipment = ReadJson<ShipmentJsonModel>(file.FullName);
                         if (cwHelper.UpdateShipment(shipment.Data))
                         {
                             fileUtility.MoveFileTo(config["ProcessedFiles"], file.FullName);
@@ -43,7 +45,12 @@ namespace JsonParser.Services.Implementations
                         {
                             fileUtility.MoveFileTo(config["ErrorFiles"], file.FullName);
                         }
-
+                        }
+                        catch (Exception ex)
+                        {
+                            Log.Information("FileprocesingService ProcessFiles Outer exception " + file.FullName + " ===> " + ex.Message + "  " + ex.InnerException + " " + ex.StackTrace);
+                            fileUtility.MoveFileTo(config["ErrorFiles"], file.FullName);
+                        }
                     }
                 }
 

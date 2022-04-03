@@ -12,6 +12,10 @@ namespace JsonParser.Services
         public const string VolumeUnitDescription = "Cubic Metres";
         public const string PackageUnitCode = "PKG";
         public const string PackageUnitDescription = "Package";
+        public const string IncoTerm = "FOB";
+        public const string BookingStatus = "Confirmed";
+        public const string LegType = "Main";
+        public const string TransportMode = "Sea";
 
 
         public enum AddressType
@@ -20,7 +24,9 @@ namespace JsonParser.Services
             NotifyParty2,
             DeliveryAgent,
             ConsignorPickupDeliveryAddress,
-            ConsigneePickupDeliveryAddress
+            ConsigneePickupDeliveryAddress,
+            ConsignorDocumentaryAddress,
+            ConsigneeDocumentaryAddress
         }
 
         public enum DataTarget

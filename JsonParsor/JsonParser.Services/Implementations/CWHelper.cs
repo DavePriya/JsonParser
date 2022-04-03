@@ -48,11 +48,11 @@ namespace JsonParser.Services.Implementations
                     //writer.WriteString(shipmentModel.ShipmentReferenceNo);
                     //writer.WriteEndElement();//DataProvider end
 
-                    writer.WriteStartElement("EnterpriseID");
-                    writer.WriteString(Constants.EnterpriseID);
-                    writer.WriteEndElement();//EnterpriseID end
+                    //writer.WriteStartElement("EnterpriseID");
+                    //writer.WriteString(Constants.EnterpriseID);
+                    //writer.WriteEndElement();//EnterpriseID end
 
-                    writer.WriteElementString("ServerID", Constants.ServerID);
+                    //writer.WriteElementString("ServerID", Constants.ServerID);
 
                     writer.WriteEndElement();//data target end  
                     writer.WriteEndElement();//data target collection end  
@@ -117,6 +117,35 @@ namespace JsonParser.Services.Implementations
 
                     writer.WriteEndElement();//OrganizationAddressCollection end  
 
+                    writer.WriteStartElement("TransportLegCollection");
+                    writer.WriteAttributeString("content", "Complete");
+
+                    writer.WriteStartElement("TransportLeg");
+
+                    writer.WriteStartElement("PortOfDischarge");
+                    writer.WriteElementString("Name", shipmentModel.PlaceOfDischarge?.Split(',')[0]?.Trim());
+                    writer.WriteEndElement();//PortOfDischarge end  
+
+                    writer.WriteStartElement("PortOfLoading");
+                    writer.WriteElementString("Name", shipmentModel.PortOfLoading?.Split(',')[0]?.Trim());
+                    writer.WriteEndElement();//PortOfLoading end  
+
+                    writer.WriteElementString("LegOrder", "1");
+
+                    writer.WriteStartElement("BookingStatus");
+                    writer.WriteElementString("Code", "CNF");
+                    writer.WriteElementString("Description", Constants.BookingStatus);
+                    writer.WriteEndElement();//BookingStatus end  
+
+                    writer.WriteElementString("LegType", Constants.LegType);
+                    writer.WriteElementString("TransportMode", Constants.TransportMode);
+                    writer.WriteElementString("VesselName", shipmentModel.VesselName);
+                    writer.WriteElementString("VoyageFlightNo", shipmentModel.VoyageNo);
+
+                    writer.WriteEndElement();//TransportLeg end  
+
+                    writer.WriteEndElement();//TransportLegCollection end  
+
                     writer.WriteStartElement("SubShipmentCollection");
 
                     writer.WriteStartElement("SubShipment");
@@ -146,7 +175,8 @@ namespace JsonParser.Services.Implementations
                     //writer.WriteEndElement();//PortOfOrigin end  
 
                     writer.WriteStartElement("ShipmentIncoTerm");
-                    writer.WriteElementString("Code", shipmentModel.PaymentTerm);
+                     writer.WriteElementString("Code", Constants.IncoTerm);
+                    //  writer.WriteElementString("Code", shipmentModel.PaymentTerm);
                     writer.WriteEndElement();//ShipmentIncoTerm end  
 
                     writer.WriteElementString("TotalVolume", shipmentModel.Volume?.Split('M')[0]);
@@ -156,15 +186,21 @@ namespace JsonParser.Services.Implementations
                     writer.WriteEndElement();//TotalVolumeUnit end  
 
                     writer.WriteElementString("WayBillNumber", shipmentModel.MTDBLNo);
-                    
+
                     writer.WriteStartElement("LocalProcessing");
 
                     writer.WriteStartElement("OrderNumberCollection");
-                    writer.WriteStartElement("OrderNumber");
-                    
-                    writer.WriteElementString("OrderReference", shipmentModel.ShipmentReferenceNo);
+                    var shipmentRefs = shipmentModel.ShipmentReferenceNo.Split(',');
 
-                    writer.WriteEndElement();//OrderNumber  end
+                    for (int i=0;i<shipmentRefs.Length;i++)
+                    {
+                        writer.WriteStartElement("OrderNumber");
+
+                        writer.WriteElementString("OrderReference", shipmentRefs[i]);
+                        writer.WriteElementString("Sequence", (i+1).ToString());
+
+                        writer.WriteEndElement();//OrderNumber  end
+                    }
                     writer.WriteEndElement();//OrderNumberCollection end
 
                     writer.WriteEndElement();//LocalProcessing end
@@ -196,14 +232,14 @@ namespace JsonParser.Services.Implementations
                     writer.WriteEndElement();//OrganizationAddress end  
 
                     writer.WriteStartElement("OrganizationAddress");
-                    writer.WriteElementString("AddressType", Constants.AddressType.ConsignorPickupDeliveryAddress.ToString());
+                    writer.WriteElementString("AddressType", Constants.AddressType.ConsignorDocumentaryAddress.ToString());
                     writer.WriteElementString("Address1", shipmentModel.ConsignorAddress);
                     writer.WriteElementString("AddressOverride", "false");
                     writer.WriteElementString("CompanyName", shipmentModel.Consignor);
                     writer.WriteEndElement();//OrganizationAddress end  
 
                     writer.WriteStartElement("OrganizationAddress");
-                    writer.WriteElementString("AddressType", Constants.AddressType.ConsigneePickupDeliveryAddress.ToString());
+                    writer.WriteElementString("AddressType", Constants.AddressType.ConsigneeDocumentaryAddress.ToString());
                     writer.WriteElementString("Address1", shipmentModel.ConsigneeAddress);
                     writer.WriteElementString("AddressOverride", "false");
                     writer.WriteElementString("CompanyName", shipmentModel.Consignee);

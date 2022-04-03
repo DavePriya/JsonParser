@@ -15,7 +15,7 @@ namespace JsonParser
             IHost host = CreateHostBuilder(args).Build();
             host.Services.UseScheduler(scheduler =>
             {
-                scheduler.Schedule<JsonInvocable>().EveryFiveSeconds().PreventOverlapping("JsonInvocable");
+                scheduler.Schedule<JsonInvocable>().EveryFiveMinutes().PreventOverlapping("JsonInvocable");
             });
             host.Run();
         }

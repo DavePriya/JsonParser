@@ -7,7 +7,7 @@ namespace JsonParser.Services.Implementations
 {
     public class FtpHelper : IFtpHelper
     {
-        public void DownloadSFTPFiles(string host, string ftpUser, string ftpPwd, string ftpDir, string downloadPath, bool deleteFileAfterDownload)
+        public void DownloadSFTPFiles(string host, string ftpUser, string ftpPwd, string ftpDir, string downloadPath, string deleteFileAfterDownload)
         {
             using (var ftp = new FtpClient(host, ftpUser, ftpPwd))
             {
@@ -32,6 +32,10 @@ namespace JsonParser.Services.Implementations
                         var saveFilePath = Path.Combine(downloadPath, fileName ?? throw new InvalidOperationException("File Appears to not have a name"));
 
                         ftp.DownloadFile(localPath: saveFilePath, remotePath: item.FullName);
+                        if (deleteFileAfterDownload.Equals("Y"))
+                        {
+                            ftp.DeleteFile(item.FullName);
+                        }
                     }
                 }
 
