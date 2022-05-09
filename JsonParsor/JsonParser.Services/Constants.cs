@@ -16,6 +16,10 @@ namespace JsonParser.Services
         public const string BookingStatus = "Confirmed";
         public const string LegType = "Main";
         public const string TransportMode = "Sea";
+        public const string BillIssued = "BillIssued";
+        public const string WayBillTypeCode = "HWB";
+        public const string WayBillTypeDesc = "House Waybill";
+
 
 
         public enum AddressType

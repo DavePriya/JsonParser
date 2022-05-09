@@ -4,22 +4,22 @@ namespace JsonParser.Services.Models
 {
     public class LineItemModel
     {
-        [JsonProperty(PropertyName = "Sr No")]
+        [JsonProperty(PropertyName = "SrNo")]
         public string SrNo { get; set; }
 
-        [JsonProperty(PropertyName = "Marks and Number")]
+        [JsonProperty(PropertyName = "MarksandNumbers")]
         public string MarksNumbers { get; set; }
 
-        [JsonProperty(PropertyName = "Number of  Packages")]
+        [JsonProperty(PropertyName = "NumberofPackages")]
         public string NumberPackages { get; set; }
 
-        [JsonProperty(PropertyName = "Description of Goods")]
+        [JsonProperty(PropertyName = "DescriptionofGoods")]
         public string DescriptionGoods { get; set; }
 
-        [JsonProperty(PropertyName = "Gross  Weight")]
+        [JsonProperty(PropertyName = "GrossWeight")]
         public string GrossWeight { get; set; }
 
-        [JsonProperty(PropertyName = "Measurement / CBM")]
+        [JsonProperty(PropertyName = "Measurement/CBM")]
         public string Measurement { get; set; }
 
 

@@ -27,7 +27,7 @@ namespace JsonParser.Services.Implementations
         {
             try
             {
-               ftpHelper.DownloadSFTPFiles(config["FtpHost"], config["FtpUser"], config["FtpPasssword"], config["FtpDir"], config["InputPath"],config["DeleteFileAfterDownload"]);
+               ftpHelper.DownloadSFTPFiles(config["FtpHost"], config["FtpUser"], config["FtpPasssword"], config["FtpDir"], config["InputPath"], config["DeleteFileAfterDownload"]);
 
                 FileSystemInfo[] inputFiles = fileUtility.GetFiles(config["InputPath"], "*.json");
                 if (inputFiles?.Length > 0)
@@ -36,15 +36,17 @@ namespace JsonParser.Services.Implementations
                     {
                         try
                         {
-                            ShipmentJsonModel shipment = ReadJson<ShipmentJsonModel>(file.FullName);
-                        if (cwHelper.UpdateShipment(shipment.Data))
-                        {
-                            fileUtility.MoveFileTo(config["ProcessedFiles"], file.FullName);
-                        }
-                        else
-                        {
-                            fileUtility.MoveFileTo(config["ErrorFiles"], file.FullName);
-                        }
+                            //ShipmentJsonModel shipment = ReadJson<ShipmentJsonModel>(file.FullName);
+                            ShipmentModel shipment = ReadJson<ShipmentModel>(file.FullName);
+                            //if (cwHelper.UpdateShipment(shipment.Data))
+                            if (cwHelper.UpdateShipment(shipment))
+                            {
+                                fileUtility.MoveFileTo(config["ProcessedFiles"], file.FullName);
+                            }
+                            else
+                            {
+                                fileUtility.MoveFileTo(config["ErrorFiles"], file.FullName);
+                            }
                         }
                         catch (Exception ex)
                         {
