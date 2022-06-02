@@ -52,6 +52,15 @@ namespace JsonParser.Services.Implementations
 
                     writer.WriteEndElement();//data target collection end  
 
+                    writer.WriteStartElement("DataSourceCollection");
+
+                    writer.WriteStartElement("DataSource");
+                    writer.WriteElementString("Type", Constants.DataTarget.ForwardingConsol.ToString());
+                    writer.WriteElementString("Key", shipmentModel.Consol_No);
+                    writer.WriteEndElement();//DataSource end  
+
+                    writer.WriteEndElement();//DataSourceCollection end  
+
                     writer.WriteEndElement();//data context end
 
                     //writer.WriteStartElement("PlaceOfDelivery");
@@ -176,6 +185,11 @@ namespace JsonParser.Services.Implementations
 
                     writer.WriteElementString("OuterPacks", shipmentModel.LineItem1.Data[0]?.NumberPackages);
 
+                    writer.WriteStartElement("OuterPacksPackageType");
+                    writer.WriteElementString("Code", shipmentModel.LineItem1.Data[0]?.Pkg_Type);
+                    writer.WriteEndElement();//OuterPacksPackageType end  
+
+                    writer.WriteElementString("HBLContainerPackModeOverride", shipmentModel.MoveType);
 
                     //writer.WriteStartElement("PortOfDestination");
                     //writer.WriteElementString("Code", shipmentModel.PlaceOfDelivery?.Split(',')[0]?.Trim());
@@ -191,20 +205,20 @@ namespace JsonParser.Services.Implementations
                     writer.WriteElementString("Code", shipmentModel.PaymentTerm);
                     writer.WriteEndElement();//ShipmentIncoTerm end  
 
-                    writer.WriteElementString("ReleaseType", shipmentModel.ReleaseType);
+                    writer.WriteStartElement("ReleaseType");
+                    writer.WriteElementString("Code", shipmentModel.ReleaseType);
+                    writer.WriteEndElement();//ReleaseType end  
 
                     writer.WriteElementString("TotalVolume", shipmentModel.LineItem1.Data[0].Measurement);
 
                     writer.WriteStartElement("TotalVolumeUnit");
-                    writer.WriteElementString("Code", Constants.VolumeUnitCode);
-                    writer.WriteElementString("Description", Constants.VolumeUnitDescription);
+                    writer.WriteElementString("Code", shipmentModel.LineItem1.Data[0].Measurement_Units);
                     writer.WriteEndElement();//TotalVolumeUnit end  
 
                     writer.WriteElementString("TotalWeight", shipmentModel.LineItem1.Data[0].GrossWeight);
 
                     writer.WriteStartElement("TotalWeightUnit");
-                    writer.WriteElementString("Code", Constants.WeightUnitCode);
-                    writer.WriteElementString("Description", Constants.WeightUnitDescription);
+                    writer.WriteElementString("Code", shipmentModel.LineItem1.Data[0].Gr_Units);
                     writer.WriteEndElement();//TotalWeightUnit end  
 
                     writer.WriteElementString("WayBillNumber", shipmentModel.MTDBLNo);
@@ -349,11 +363,7 @@ namespace JsonParser.Services.Implementations
                     //{
                     //    noteText.AppendJoin(',', lineItem.DescriptionGoods);
                     //}
-
-
                     //writer.WriteString(noteText.ToString());
-
-
 
                     writer.WriteEndElement();//NoteCollection end 
 
@@ -398,32 +408,29 @@ namespace JsonParser.Services.Implementations
                     foreach (LineItem2Model lineItem in shipmentModel.LineItem2.Data)
                     {
                         writer.WriteStartElement("PackingLine");
-                        
+
                         writer.WriteElementString("ContainerNumber", lineItem.Container);
                         writer.WriteElementString("Link", containerLink.ToString());
                         writer.WriteElementString("ContainerLink", containerLink.ToString());
 
                         containerLink++;
-                        
+
                         writer.WriteElementString("PackQty", lineItem.Packages);
                         writer.WriteElementString("HarmonisedCode", lineItem.HSCode);
 
                         writer.WriteElementString("Weight", lineItem.Gr_Weight);
 
                         writer.WriteStartElement("WeightUnit");
-                        writer.WriteElementString("Code", Constants.WeightUnitCode);
-                        writer.WriteElementString("Description", Constants.WeightUnitDescription);
+                        writer.WriteElementString("Code", lineItem.GR_Units);
                         writer.WriteEndElement();//WeightUnit end  
 
                         writer.WriteElementString("Volume", lineItem.Volume);
                         writer.WriteStartElement("VolumeUnit");
-                        writer.WriteElementString("Code", Constants.VolumeUnitCode);
-                        writer.WriteElementString("Description", Constants.VolumeUnitDescription);
+                        writer.WriteElementString("Code", lineItem.Volume_Units);
                         writer.WriteEndElement();//VolumeUnit end  
 
                         writer.WriteStartElement("PackType");
-                        writer.WriteElementString("Code", Constants.PackageUnitCode);
-                        writer.WriteElementString("Description", Constants.PackageUnitDescription);
+                        writer.WriteElementString("Code", lineItem.Packages_Units);
                         writer.WriteEndElement();//PackType end  
 
                         writer.WriteStartElement("CustomizedFieldCollection");
@@ -451,11 +458,11 @@ namespace JsonParser.Services.Implementations
                     writer.Flush();
                     mStream.Position = 0;
 
-                    //using (FileStream fs = new FileStream("H:\\fileName.xml", FileMode.OpenOrCreate))
-                    //{
-                    //    mStream.CopyTo(fs);
-                    //    fs.Flush();
-                    //}
+                    using (FileStream fs = new FileStream("H:\\fileName.xml", FileMode.OpenOrCreate))
+                    {
+                        mStream.CopyTo(fs);
+                        fs.Flush();
+                    }
 
                     var statusCode = cargowiseOne.UpdateCargowiseOne(mStream);
                     if (statusCode != HttpStatusCode.OK) //If response is not OK, set success=false

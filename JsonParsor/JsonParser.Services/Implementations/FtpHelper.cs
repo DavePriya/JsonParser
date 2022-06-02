@@ -16,7 +16,7 @@ namespace JsonParser.Services.Implementations
                 {
 
                     // if this is a file
-                    if (item.Type == FtpFileSystemObjectType.File && (Path.GetExtension(item.FullName) == ".json"))
+                    if (item.Type == FtpFileSystemObjectType.File && (Path.GetExtension(item.FullName).Equals(".json",StringComparison.InvariantCultureIgnoreCase)))
                     {
                         // get the file size
                         //  long size = ftp.GetFileSize(item.FullName);

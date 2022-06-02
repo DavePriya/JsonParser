@@ -4,6 +4,9 @@ namespace JsonParser.Services.Models
 {
     public class ShipmentModel
     {
+        [JsonProperty(PropertyName = "Consol_No")]
+        public string Consol_No { get; set; }
+
         [JsonProperty(PropertyName = "DeliveryAgentContact")]
         public string DeliveryAgentContact { get; set; }
 
@@ -18,7 +21,7 @@ namespace JsonParser.Services.Models
 
         [JsonProperty(PropertyName = "ShippingBillDate")]
         public string ShippingBillDate { get; set; }
-        
+
         [JsonProperty(PropertyName = "PortofLoading")]
         public string PortOfLoading { get; set; }
 
@@ -50,7 +53,7 @@ namespace JsonParser.Services.Models
         [JsonProperty(PropertyName = "ShippingBill")]
         public string ShippingBill { get; set; }
 
-        [JsonProperty(PropertyName = "DeliveryAgentContactAddress")]
+        [JsonProperty(PropertyName = "DeliveryAgentAddress")]
         public string DeliveryAgentContactAddress { get; set; }
 
         [JsonProperty(PropertyName = "ShipmentReferenceNo")]
